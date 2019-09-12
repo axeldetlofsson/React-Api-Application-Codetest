@@ -3,19 +3,22 @@ import '../App.css';
 
 class History extends Component {
 
-    createList = () =>
-    {
-        let items = this.props.historyEntries.map((value, index) => {
-            return <li key={index}><a onClick={this.props.historyClick.bind(this, index)} href="#">{value.name}</a></li>
-        })
-        return items;
-    }
-      
+  //Loop thrugh the cashed searchresults and return dom elements
+  createList = () => {
+    let items = this.props.historyEntries.map((value, index) => {
+      return <li className="list-group-item" key={index}><a onClick={this.props.historyClick.bind(this, index)} href="#0">{value.name}</a></li>
+    })
+    return items;
+  }
+
   render() {
     return (
-      <ul>
+      <div >
+        <h5 >History</h5>
+        <ul className="list-group list-group-flush">
           {this.createList()}
-      </ul>
+        </ul>
+      </div>
     );
   }
 }

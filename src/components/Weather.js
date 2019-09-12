@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../App.css';
+
+
 
 class Weather extends Component {
   render() {
-      const apiKey= '7244be7ed61ecfc12d887e96950d5079';
     return (
       <div>
+        <h5>{this.props.weather.temp}</h5>
+        <h5>{this.props.weather.descr}</h5>
       </div>
     );
   }
